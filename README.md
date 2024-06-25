@@ -17,3 +17,20 @@ func main() {
         fmt.Printf("Port %d: %v\n", result.Port, result.Open)
     }
 }
+
+```
+
+
+```
+portscanner/
+│
+├── cmd/
+│   └── main.go
+│
+├── internal/
+│   ├── portscanner.go
+│   └── portscanner_test.go
+│
+├── go.mod
+└── README.md
+```
