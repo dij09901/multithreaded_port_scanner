@@ -1,27 +1,20 @@
-// cmd/main.go
 package main
 
 import (
     "fmt"
-    "github.com/dij09901/portscanner"
-    "os"
+    "log"
+    ps "github.com/dij09901/portscanner/internal"
 )
 
 func main() {
-    if len(os.Args) < 4 {
-        fmt.Println("Usage: go run main.go <host> <startPort> <endPort>")
-        os.Exit(1)
-    }
+    host := "scanme.nmap.org"
+    startPort := 80
+    endPort := 85
 
-    host := os.Args[1]
-    startPort := os.Args[2]
-    endPort := os.Args[3]
-
-    scanner := portscanner.NewScanner(portscanner.DefaultTimeout)
+    scanner := ps.NewScanner(ps.DefaultTimeout)
     results, err := scanner.ScanPorts(host, startPort, endPort)
     if err != nil {
-        fmt.Println("Error:", err)
-        return
+        log.Fatalf("Error scanning ports: %v", err)
     }
 
     for _, result := range results {

@@ -11,7 +11,7 @@ import (
 
 func main() {
     scanner := portscanner.NewScanner(1 * time.Second)
-    results, _ := scanner.ScanPorts("scanme.nmap.org", 80, 90)
+    results, _ := scanner.ScanPorts("scanme.nmap.org", 180, 190)
 
     for _, result := range results {
         fmt.Printf("Port %d: %v\n", result.Port, result.Open)
