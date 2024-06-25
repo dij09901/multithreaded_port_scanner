@@ -1,12 +1,12 @@
 # PortScanner
 
-`PortScanner` — це бібліотека на Golang для багатопоточного сканування відкритих портів.
+`PortScanner` — is a Golang library for multi-threaded open port scanning.
 
-## Використання
+## Application of the code
 
 ```go
 import (
-    "github.com/your-username/portscanner/internal"
+    "github.com/dij09901/portscanner/internal"
 )
 
 func main() {
